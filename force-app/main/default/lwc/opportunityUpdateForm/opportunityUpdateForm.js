@@ -1,6 +1,6 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { getRecord } from 'lightning/uiRecordApi';
+import { getRecordNotifyChange } from 'lightning/uiRecordApi';
 import getOpportunityData from '@salesforce/apex/OpportunityUpdateController.getOpportunityData';
 import updateAndNotify from '@salesforce/apex/OpportunityUpdateController.updateAndNotify';
 
@@ -94,8 +94,9 @@ export default class OpportunityUpdateForm extends LightningElement {
             .then(result => {
                 this.showToast('Success', result, 'success');
                 this.handleCloseModal();
-                // Refresh the record page
-                eval("$A.get('e.force:refreshView').fire();");
+                
+                // Refresh the record page using LWC approach
+                getRecordNotifyChange([{recordId: this.recordId}]);
             })
             .catch(error => {
                 this.isLoading = false;
