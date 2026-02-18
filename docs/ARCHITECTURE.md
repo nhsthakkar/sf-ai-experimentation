@@ -119,7 +119,7 @@ This solution enables Sales Users to update Opportunity and Account records via 
 
 #### `sendEmailWithPDF()` (private)
 - **Purpose**: Creates and sends SingleEmailMessage with PDF attachment
-- **Recipient**: nhsthakkar@gmail.com (hardcoded)
+- **Recipient**: ****@gmail.com (hardcoded)
 
 **Security**: `with sharing` (enforces record-level security)
 
