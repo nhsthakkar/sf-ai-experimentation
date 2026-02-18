@@ -8,7 +8,7 @@ This repository contains a complete Salesforce solution that enables Sales Users
 ### User Story
 **As a** Sales User  
 **I want to** click a button on the Opportunity detail page to update Amount (Opportunity) and Number of Employees (Account) via a form, then generate and email a PDF to Customer Success  
-**So that** Nimish is notified of client onboarding updates
+**So that** Tom on Customer Success team is notified of client onboarding updates
 
 ### Story Points: 8
 **Estimated Effort**: 16-20 hours
