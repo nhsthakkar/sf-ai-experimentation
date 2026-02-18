@@ -57,8 +57,7 @@ This solution enables Sales Users to update Opportunity and Account records via 
                    ┏━━━━━━━━━━━━━━━━━┓
                    ┃ Customer        ┃
                    ┃ Success Team    ┃
-                   ┃ (nhsthakkar@    ┃
-                   ┃  gmail.com)     ┃
+                   ┃ (***@gmail.com) ┃
                    ┗━━━━━━━━━━━━━━━━━┛
 ```
 
