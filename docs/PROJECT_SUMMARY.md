@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This project delivers a **production-ready Salesforce solution** that enables Sales Users to update Opportunity and Account records through an intuitive Lightning Web Component form, then automatically generates a PDF report and emails it to the Customer Success team at nhsthakkar@gmail.com.
+This project delivers a **production-ready Salesforce solution** that enables Sales Users to update Opportunity and Account records through an intuitive Lightning Web Component form, then automatically generates a PDF report and emails it to the Customer Success team at *****@gmail.com.
 
 ### Key Achievements
 
@@ -174,7 +174,7 @@ All artifacts have been committed to the repository:
 5. **Verify Email Deliverability**:
    - Setup → Email Administration → Deliverability
    - Ensure outbound emails enabled
-   - Whitelist nhsthakkar@gmail.com if in Sandbox
+   - Whitelist *****@gmail.com if in Sandbox
 
 ---
 
@@ -381,7 +381,7 @@ Quarterly:
 
 7. ⏳ **User Acceptance Testing** - Sales Users test with real data
 8. ⏳ **Run QA Test Plan** - Execute all 33 test cases
-9. ⏳ **Email Verification** - Confirm PDF delivery to nhsthakkar@gmail.com
+9. ⏳ **Email Verification** - Confirm PDF delivery to *****@gmail.com
 10. ⏳ **Performance Testing** - Measure actual response times
 11. ⏳ **Training** - Document user guide for Sales team
 
