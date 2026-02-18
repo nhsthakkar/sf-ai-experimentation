@@ -1,0 +1,79 @@
+<apex:page controller="OpportunityUpdatePDFController" renderAs="pdf" applyBodyTag="false" showHeader="false" sidebar="false" standardStylesheets="false">
+    <head>
+        <style>
+            @page {
+                margin: 1in;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                font-size: 12pt;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+                font-weight: bold;
+                font-size: 14pt;
+            }
+            .header-line {
+                margin: 5px 0;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                border: 1px solid #000;
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #f0f0f0;
+                font-weight: bold;
+            }
+            .footer {
+                margin-top: 30px;
+                font-size: 10pt;
+                color: #666;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-line">Opportunity Name: {!opportunityName}</div>
+            <div class="header-line">Account Name: {!accountName}</div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Field Name</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amount</td>
+                    <td>
+                        <apex:outputText value="{0, number, currency}">
+                            <apex:param value="{!amount}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Number of Employees</td>
+                    <td>
+                        <apex:outputText value="{0, number, ###,###}">
+                            <apex:param value="{!numberOfEmployees}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="footer">
+            Generated on {!TODAY()} at {!NOW()}
+        </div>
+    </body>
+</apex:page>
