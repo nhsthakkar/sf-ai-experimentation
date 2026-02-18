@@ -52,7 +52,7 @@
 - ✅ Success toast message displayed
 - ✅ Opportunity.Amount updated to $150,000
 - ✅ Account.NumberOfEmployees updated to 750
-- ✅ Email sent to nhsthakkar@gmail.com
+- ✅ Email sent to *****@gmail.com
 - ✅ Email subject: "Opportunity fields updated - ACME Q1 Deal"
 - ✅ Email body mentions "ACME Corporation"
 - ✅ PDF attached with correct data in table format
@@ -207,7 +207,7 @@
 
 **Steps**:
 1. Complete successful update
-2. Check email received at nhsthakkar@gmail.com
+2. Check email received at *****@gmail.com
 
 **Expected Results**:
 - ✅ From: Salesforce org email
@@ -436,7 +436,7 @@
 - 1 Standard User profile (for permission testing)
 
 ### Test Email Account
-- nhsthakkar@gmail.com must be accessible for verification
+- *****@gmail.com must be accessible for verification
 
 ---
 
