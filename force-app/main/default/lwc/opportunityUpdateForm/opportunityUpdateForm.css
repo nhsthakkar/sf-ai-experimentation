@@ -1,0 +1,13 @@
+/* Modal styling enhancements */
+.slds-modal__container {
+    min-width: 500px;
+}
+
+.slds-form__item {
+    padding: 0.5rem 0;
+}
+
+/* Ensure proper spacing in modal */
+.slds-modal__content {
+    min-height: 300px;
+}

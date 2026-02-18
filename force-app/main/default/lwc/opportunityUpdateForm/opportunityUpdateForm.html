@@ -1,0 +1,120 @@
+<template>
+    <lightning-card title="Update Opportunity & Account" icon-name="standard:opportunity">
+        <div class="slds-m-around_medium">
+            <!-- Button to open modal -->
+            <template if:false={isModalOpen}>
+                <lightning-button 
+                    variant="brand" 
+                    label="Submit for Onboarding" 
+                    title="Update and Notify Customer Success"
+                    onclick={handleOpenModal}
+                    class="slds-m-bottom_small">
+                </lightning-button>
+            </template>
+            
+            <!-- Modal Dialog -->
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- Modal Header -->
+                        <header class="slds-modal__header">
+                            <lightning-button-icon 
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                                variant="bare-inverse"
+                                onclick={handleCloseModal}
+                                class="slds-modal__close">
+                            </lightning-button-icon>
+                            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                                Client Onboarding Update
+                            </h2>
+                        </header>
+                        
+                        <!-- Modal Body -->
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <template if:false={isLoading}>
+                                <div class="slds-form" role="list">
+                                    <!-- Opportunity Name (Read-only) -->
+                                    <div class="slds-form__item slds-m-bottom_small" role="listitem">
+                                        <lightning-input 
+                                            label="Opportunity Name"
+                                            value={opportunityName}
+                                            disabled
+                                            class="slds-m-bottom_small">
+                                        </lightning-input>
+                                    </div>
+                                    
+                                    <!-- Account Name (Read-only) -->
+                                    <div class="slds-form__item slds-m-bottom_small" role="listitem">
+                                        <lightning-input 
+                                            label="Account Name"
+                                            value={accountName}
+                                            disabled
+                                            class="slds-m-bottom_small">
+                                        </lightning-input>
+                                    </div>
+                                    
+                                    <!-- Amount (Editable, Required) -->
+                                    <div class="slds-form__item slds-m-bottom_small" role="listitem">
+                                        <lightning-input 
+                                            type="number"
+                                            label="Amount"
+                                            value={amount}
+                                            onchange={handleAmountChange}
+                                            required
+                                            formatter="currency"
+                                            step="0.01"
+                                            min="0"
+                                            class="slds-m-bottom_small">
+                                        </lightning-input>
+                                    </div>
+                                    
+                                    <!-- Number of Employees (Editable, Required) -->
+                                    <div class="slds-form__item slds-m-bottom_small" role="listitem">
+                                        <lightning-input 
+                                            type="number"
+                                            label="Number of Employees"
+                                            value={numberOfEmployees}
+                                            onchange={handleEmployeesChange}
+                                            required
+                                            min="10"
+                                            max="100000"
+                                            step="1"
+                                            message-when-range-underflow="Number of Employees must be at least 10"
+                                            message-when-range-overflow="Number of Employees cannot exceed 100,000"
+                                            class="slds-m-bottom_small">
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </template>
+                            
+                            <!-- Loading Spinner -->
+                            <template if:true={isLoading}>
+                                <div class="slds-align_absolute-center slds-m-vertical_large">
+                                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                                </div>
+                            </template>
+                        </div>
+                        
+                        <!-- Modal Footer -->
+                        <footer class="slds-modal__footer">
+                            <lightning-button 
+                                variant="neutral" 
+                                label="Cancel"
+                                onclick={handleCloseModal}
+                                disabled={isLoading}>
+                            </lightning-button>
+                            <lightning-button 
+                                variant="brand" 
+                                label="Submit"
+                                onclick={handleSubmit}
+                                disabled={isLoading}>
+                            </lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
